@@ -1,61 +1,54 @@
 const express = require('express');
 const fs = require('fs').promises;
-const cors = require('cors');
 const path = require('path');
-
 const app = express();
-const PORT = 3000;
+const port = 3000;
 
-// Middleware
-app.use(cors());
+// Middleware to parse JSON bodies
 app.use(express.json());
 
-// File path for storing messages
-const MESSAGES_FILE = path.join(__dirname, 'contact-messages.json');
+// Serve static files (frontend)
+app.use(express.static(path.join(__dirname, 'public')));
 
-// Ensure messages file exists
-async function initializeMessagesFile() {
-    try {
-        await fs.access(MESSAGES_FILE);
-    } catch {
-        await fs.writeFile(MESSAGES_FILE, JSON.stringify([]));
-    }
-}
-
-// POST endpoint for contact form
+// Endpoint to handle contact form submission
 app.post('/api/contact', async (req, res) => {
     const { name, email, message } = req.body;
 
+    // Basic validation
     if (!name || !email || !message) {
         return res.status(400).json({ error: 'All fields are required' });
     }
 
     try {
-        // Read existing messages
-        const data = await fs.readFile(MESSAGES_FILE, 'utf8');
-        const messages = JSON.parse(data);
+        // Read existing contacts or initialize empty array
+        let contacts = [];
+        try {
+            const data = await fs.readFile('contacts.json', 'utf8');
+            contacts = JSON.parse(data);
+        } catch (error) {
+            // File doesn't exist yet, start with empty array
+        }
 
-        // Add new message
-        messages.push({
-            id: messages.length + 1,
+        // Add new contact
+        contacts.push({
+            id: contacts.length + 1,
             name,
             email,
             message,
-            timestamp: new Date().toISOString(),
+            timestamp: new Date().toISOString()
         });
 
-        // Write back to file
-        await fs.writeFile(MESSAGES_FILE, JSON.stringify(messages, null, 2));
+        // Save to contacts.json
+        await fs.writeFile('contacts.json', JSON.stringify(contacts, null, 2));
 
-        res.status(200).json({ message: 'Message saved successfully' });
+        res.status(200).json({ message: 'Contact saved successfully' });
     } catch (error) {
-        console.error('Error saving message:', error);
-        res.status(500).json({ error: 'Internal server error' });
+        console.error('Error saving contact:', error);
+        res.status(500).json({ error: 'Server error' });
     }
 });
 
 // Start server
-app.listen(PORT, async () => {
-    await initializeMessagesFile();
-    console.log(`Server running on http://localhost:${PORT}`);
+app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}`);
 });
