@@ -38,8 +38,8 @@ app.post('/api/contact', async (req, res) => {
         // Add new message
         messages.push({
             id: messages.length + 1,
-            name,
-            email,
+            AdamRistianPratama,
+            adamristian@gmail.com,
             message,
             timestamp: new Date().toISOString(),
         });
