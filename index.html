@@ -40,6 +40,30 @@
             opacity: 0.8;
             pointer-events: none;
         }
+        .chatbot-container {
+            max-height: 400px;
+            overflow-y: auto;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1rem;
+            background: #f9fafb;
+        }
+        .chatbot-message {
+            margin-bottom: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+        .chatbot-message.user {
+            background: #4f46e5;
+            color: white;
+            margin-left: 2rem;
+            text-align: right;
+        }
+        .chatbot-message.bot {
+            background: #e5e7eb;
+            margin-right: 2rem;
+            text-align: left;
+        }
     </style>
 </head>
 <body class="text-gray-800 smooth-scroll">
@@ -53,6 +77,7 @@
                 <div class="flex items-center space-x-4">
                     <a href="#home" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Home</a>
                     <a href="#features" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Features</a>
+                    <a href="#financial" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Financial Insights</a>
                     <a href="#about" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">About</a>
                     <a href="#contact" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
                 </div>
@@ -134,6 +159,44 @@
         </div>
     </section>
 
+    <!-- Financial Insights Section -->
+    <section id="financial" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">Financial Insights</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Financial Tools -->
+                <div class="p-6 bg-white rounded-lg shadow-sm">
+                    <h3 class="text-xl font-semibold mb-4">Financial Analysis Tools</h3>
+                    <p class="text-gray-600 mb-4">Input your financial data to receive instant insights and projections.</p>
+                    <div class="space-y-4">
+                        <div>
+                            <label for="income" class="block text-sm font-medium text-gray-700">Monthly Income ($)</label>
+                            <input type="number" id="income" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Enter monthly income">
+                        </div>
+                        <div>
+                            <label for="expenses" class="block text-sm font-medium text-gray-700">Monthly Expenses ($)</label>
+                            <input type="number" id="expenses" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Enter monthly expenses">
+                        </div>
+                        <button id="calculate" class="w-full bg-indigo-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-indigo-700 transition">Calculate Savings</button>
+                        <p id="result" class="text-gray-600 mt-4"></p>
+                    </div>
+                </div>
+                <!-- Chatbot -->
+                <div class="p-6 bg-white rounded-lg shadow-sm">
+                    <h3 class="text-xl font-semibold mb-4">Financial Assistant Chatbot</h3>
+                    <p class="text-gray-600 mb-4">Ask our AI-powered chatbot for financial advice or guidance.</p>
+                    <div class="chatbot-container" id="chatbotMessages">
+                        <div class="chatbot-message bot">Welcome! How can I assist you with your financial queries today?</div>
+                    </div>
+                    <div class="mt-4 flex">
+                        <input type="text" id="chatbotInput" class="flex-1 border-gray-300 rounded-l-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Type your question...">
+                        <button id="sendMessage" class="bg-indigo-600 text-white font-semibold py-2 px-4 rounded-r-md hover:bg-indigo-700 transition">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section id="about" class="py-20 bg-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -200,8 +263,57 @@
         });
 
         // Form submission (placeholder)
-        document.querySelector('button').addEventListener('click', () => {
+        document.querySelector('#contact button').addEventListener('click', () => {
             alert('Message sent successfully! (This feature is under development)');
+        });
+
+        // Financial calculator
+        document.getElementById('calculate').addEventListener('click', () => {
+            const income = parseFloat(document.getElementById('income').value) || 0;
+            const expenses = parseFloat(document.getElementById('expenses').value) || 0;
+            const savings = income - expenses;
+            const result = document.getElementById('result');
+            if (income === 0 && expenses === 0) {
+                result.textContent = 'Please enter your income and expenses.';
+            } else {
+                result.textContent = `Monthly Savings: $${savings.toFixed(2)}`;
+            }
+        });
+
+        // Chatbot functionality
+        const chatbotMessages = document.getElementById('chatbotMessages');
+        const chatbotInput = document.getElementById('chatbotInput');
+        const sendMessage = document.getElementById('sendMessage');
+
+        const responses = {
+            'budget': 'To create a budget, track your income and expenses. Allocate 50% to needs, 30% to wants, and 20% to savings or debt repayment. Would you like a detailed breakdown?',
+            'investment': 'Consider diversifying investments across stocks, bonds, and real estate. Start with low-cost index funds for beginners. Want tips for risk management?',
+            'savings': 'Aim to save 3-6 months of expenses for an emergency fund. High-yield savings accounts offer better returns. Need help setting savings goals?',
+            'default': 'I’m here to help with financial questions! Try asking about budgeting, investments, or savings.'
+        };
+
+        function addMessage(text, sender) {
+            const message = document.createElement('div');
+            message.classList.add('chatbot-message', sender);
+            message.textContent = text;
+            chatbotMessages.appendChild(message);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
+
+        sendMessage.addEventListener('click', () => {
+            const userMessage = chatbotInput.value.trim();
+            if (userMessage) {
+                addMessage(userMessage, 'user');
+                const response = responses[userMessage.toLowerCase()] || responses['default'];
+                setTimeout(() => addMessage(response, 'bot'), 500);
+                chatbotInput.value = '';
+            }
+        });
+
+        chatbotInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && chatbotInput.value.trim()) {
+                sendMessage.click();
+            }
         });
     </script>
 </body>
