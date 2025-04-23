@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Genius Artificial Intelligence - Empowering Your Thinking</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -78,6 +79,7 @@
                     <a href="#home" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Home</a>
                     <a href="#features" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Features</a>
                     <a href="#financial" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Financial Insights</a>
+                    <a href="#learning" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Learning Management</a>
                     <a href="#about" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">About</a>
                     <a href="#contact" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
                 </div>
@@ -108,7 +110,7 @@
                 </div>
                 <div class="p-6 bg-gray-50 rounded-lg shadow-sm text-center feature-card">
                     <div class="text-indigo-600 mb-4">
-                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+\
                     </div>
                     <h3 class="text-xl font-semibold mb-2">Creative Ideation</h3>
                     <p class="text-gray-600">Spark boundless inspiration for your projects. Genius Artificial Intelligence generates innovative ideas, from design concepts to marketing strategies, complete with visual and narrative suggestions to ignite your creativity.</p>
@@ -132,14 +134,14 @@
                         <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     </div>
                     <h3 class="text-xl font-semibold mb-2">Adaptive Learning</h3>
-                    <p class="text-gray-600">Genius Artificial Intelligence learns from your patterns and preferences, refining recommendations based on usage. The more you engage, the more relevant and personalized the outputs become.</p>
+                    <p class="text-gray-600">Genius AI learns from your patterns and preferences, refining recommendations based on usage. The more you engage, the more relevant and personalized the outputs become.</p>
                 </div>
                 <div class="p-6 bg-gray-50 rounded-lg shadow-sm text-center feature-card">
                     <div class="text-indigo-600 mb-4">
                         <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
                     </div>
                     <h3 class="text-xl font-semibold mb-2">Multi-Platform Integration</h3>
-                    <p class="text-gray-600">Connect Genius Artificial Intelligence with tools like Slack, Notion, or Google Workspace. Import data, export results, and automate workflows for maximum efficiency.</p>
+                    <p class="text-gray-600">Connect Genius AI with tools like Slack, Notion, or Google Workspace. Import data, export results, and automate workflows for maximum efficiency.</p>
                 </div>
                 <div class="p-6 bg-gray-50 rounded-lg shadow-sm text-center feature-card">
                     <div class="text-indigo-600 mb-4">
@@ -153,7 +155,7 @@
                         <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0-1.104-.896-2-2-2s-2 .896-2 2c0 .738.402 1.378 1 1.723V15a1 1 0 001 1h4a1 1 0 001-1v-2.277c.598-.345 1-.985 1-1.723 0-1.104-.896-2-2-2s-2 .896-2 2m-2 0h4m-4 0c0-1.104.896-2 2-2s2 .896 2 2m-2 0v4"></path></svg>
                     </div>
                     <h3 class="text-xl font-semibold mb-2">AI Personalization</h3>
-                    <p class="text-gray-600">Customize preferences, such as language style or topic focus, for a truly tailored experience. Genius Artificial Intelligence adapts outputs to align with your vision and goals.</p>
+                    <p class="text-gray-600">Customize preferences, such as language style or topic focus, for a truly tailored experience. Genius AI adapts outputs to align with your vision and goals.</p>
                 </div>
             </div>
         </div>
@@ -191,6 +193,44 @@
                     <div class="mt-4 flex">
                         <input type="text" id="chatbotInput" class="flex-1 border-gray-300 rounded-l-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Type your question...">
                         <button id="sendMessage" class="bg-indigo-600 text-white font-semibold py-2 px-4 rounded-r-md hover:bg-indigo-700 transition">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Management Section -->
+    <section id="learning" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">Learning Management</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Learning Schedule Visualizer -->
+                <div class="p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <h3 class="text-xl font-semibold mb-4">Learning Schedule Visualizer</h3>
+                    <p class="text-gray-600 mb-4">Plan your study schedule and visualize your weekly learning hours.</p>
+                    <div class="space-y-4">
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700">Subject</label>
+                            <input type="text" id="subject" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Enter subject (e.g., Math)">
+                        </div>
+                        <div>
+                            <label for="hours" class="block text-sm font-medium text-gray-700">Hours per Week</label>
+                            <input type="number" id="hours" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Enter hours">
+                        </div>
+                        <button id="addSubject" class="w-full bg-indigo-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-indigo-700 transition">Add to Schedule</button>
+                        <canvas id="learningChart" class="mt-4"></canvas>
+                    </div>
+                </div>
+                <!-- Learning Chatbot -->
+                <div class="p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <h3 class="text-xl font-semibold mb-4">Learning Assistant Chatbot</h3>
+                    <p class="text-gray-600 mb-4">Ask our AI-powered chatbot for study tips or learning strategies.</p>
+                    <div class="chatbot-container" id="learningChatbotMessages">
+                        <div class="chatbot-message bot">Hello! How can I help you optimize your learning today?</div>
+                    </div>
+                    <div class="mt-4 flex">
+                        <input type="text" id="learningChatbotInput" class="flex-1 border-gray-300 rounded-l-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Type your question...">
+                        <button id="sendLearningMessage" class="bg-indigo-600 text-white font-semibold py-2 px-4 rounded-r-md hover:bg-indigo-700 transition">Send</button>
                     </div>
                 </div>
             </div>
@@ -244,7 +284,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <p class="text-sm">© 2025 Genius Artificial Intelligence. All rights reserved.</p>
             <div class="mt-4 flex justify-center space-x-4">
-                <a href="https://github.com" class="text-gray-400 hover:text-white">GitHub</a>
+                <a href="https://github.com" class="https://github.com/Eternixal">GitHub</a>
                 <a href="https://twitter.com" class="text-gray-400 hover:text-white">Twitter</a>
                 <a href="https://linkedin.com" class="text-gray-400 hover:text-white">LinkedIn</a>
             </div>
@@ -280,41 +320,13 @@
             }
         });
 
-        // Chatbot functionality
+        // Financial chatbot
         const chatbotMessages = document.getElementById('chatbotMessages');
         const chatbotInput = document.getElementById('chatbotInput');
         const sendMessage = document.getElementById('sendMessage');
 
-        const responses = {
+        const financialResponses = {
             'budget': 'To create a budget, track your income and expenses. Allocate 50% to needs, 30% to wants, and 20% to savings or debt repayment. Would you like a detailed breakdown?',
             'investment': 'Consider diversifying investments across stocks, bonds, and real estate. Start with low-cost index funds for beginners. Want tips for risk management?',
             'savings': 'Aim to save 3-6 months of expenses for an emergency fund. High-yield savings accounts offer better returns. Need help setting savings goals?',
-            'default': 'I’m here to help with financial questions! Try asking about budgeting, investments, or savings.'
-        };
-
-        function addMessage(text, sender) {
-            const message = document.createElement('div');
-            message.classList.add('chatbot-message', sender);
-            message.textContent = text;
-            chatbotMessages.appendChild(message);
-            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-        }
-
-        sendMessage.addEventListener('click', () => {
-            const userMessage = chatbotInput.value.trim();
-            if (userMessage) {
-                addMessage(userMessage, 'user');
-                const response = responses[userMessage.toLowerCase()] || responses['default'];
-                setTimeout(() => addMessage(response, 'bot'), 500);
-                chatbotInput.value = '';
-            }
-        });
-
-        chatbotInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter' && chatbotInput.value.trim()) {
-                sendMessage.click();
-            }
-        });
-    </script>
-</body>
-</html>
+            'default': 'I’m here to help with financial questions! Try asking about budgeting, investments, or savings vestigial link to the Wayback Machine (web.archive.org): [https://web.archive.org/web/20230614033204/https://genius-ai.vercel.app/](https://genius-ai.vercel.app/)
