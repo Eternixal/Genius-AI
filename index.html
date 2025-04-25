@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Genius Artificial Intelligence - Empowering Your Thinking</title>
+    <title>Nexify AI - Empowering Your Thinking</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -72,12 +73,13 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <h1 class="text-2xl font-bold text-indigo-600">Genius AI</h1>
+                    <h1 class="text-2xl font-bold text-indigo-600">Nexify AI</h1>
                 </div>
                 <div class="flex items-center space-x-4">
                     <a href="#home" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Home</a>
                     <a href="#features" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Features</a>
                     <a href="#financial" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Financial Insights</a>
+                    <a href="#learning" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Learning Management</a>
                     <a href="#about" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">About</a>
                     <a href="#contact" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
                 </div>
@@ -88,7 +90,7 @@
     <!-- Hero Section -->
     <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-r from-indigo-500 to-purple-600 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl md:text-5xl font-bold mb-4">Genius Artificial Intelligence: Your Thinking Partner</h2>
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">Nexify AI: Your Thinking Partner</h2>
             <p class="text-lg md:text-xl mb-6">Unlock inspiration, solutions, and brilliant ideas with cutting-edge AI technology.</p>
             <a href="#features" class="inline-block bg-white text-indigo-600 font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-gray-100 transition">Explore Features</a>
         </div>
@@ -104,21 +106,21 @@
                         <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                     </div>
                     <h3 class="text-xl font-semibold mb-2">Intelligent Analysis</h3>
-                    <p class="text-gray-600">Genius Artificial Intelligence leverages advanced algorithms to analyze complex data, delivering precise and tailored solutions. From business planning to decision-making, gain deep insights customized to your needs.</p>
+                    <p class="text-gray-600">Nexify AI leverages advanced algorithms to analyze complex data, delivering precise and tailored solutions. From business planning to decision-making, gain deep insights customized to your needs.</p>
                 </div>
                 <div class="p-6 bg-gray-50 rounded-lg shadow-sm text-center feature-card">
                     <div class="text-indigo-600 mb-4">
                         <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
                     </div>
                     <h3 class="text-xl font-semibold mb-2">Creative Ideation</h3>
-                    <p class="text-gray-600">Spark boundless inspiration for your projects. Genius Artificial Intelligence generates innovative ideas, from design concepts to marketing strategies, complete with visual and narrative suggestions to ignite your creativity.</p>
+                    <p class="text-gray-600">Spark boundless inspiration for your projects. Nexify AI generates innovative ideas, from design concepts to marketing strategies, complete with visual and narrative suggestions to ignite your creativity.</p>
                 </div>
                 <div class="p-6 bg-gray-50 rounded-lg shadow-sm text-center feature-card">
                     <div class="text-indigo-600 mb-4">
                         <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                     </div>
                     <h3 class="text-xl font-semibold mb-2">Instant Responses</h3>
-                    <p class="text-gray-600">Powered by rapid processing technology, Genius Artificial Intelligence delivers answers in seconds. Ideal for urgent scenarios or when you need swift solutions without compromising quality.</p>
+                    <p class="text-gray-600">Powered by rapid processing technology, Nexify AI delivers answers in seconds. Ideal for urgent scenarios or when you need swift solutions without compromising quality.</p>
                 </div>
                 <div class="p-6 bg-gray-50 rounded-lg shadow-sm text-center feature-card">
                     <div class="text-indigo-600 mb-4">
@@ -132,14 +134,14 @@
                         <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     </div>
                     <h3 class="text-xl font-semibold mb-2">Adaptive Learning</h3>
-                    <p class="text-gray-600">Genius Artificial Intelligence learns from your patterns and preferences, refining recommendations based on usage. The more you engage, the more relevant and personalized the outputs become.</p>
+                    <p class="text-gray-600">Nexify AI learns from your patterns and preferences, refining recommendations based on usage. The more you engage, the more relevant and personalized the outputs become.</p>
                 </div>
                 <div class="p-6 bg-gray-50 rounded-lg shadow-sm text-center feature-card">
                     <div class="text-indigo-600 mb-4">
                         <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
                     </div>
                     <h3 class="text-xl font-semibold mb-2">Multi-Platform Integration</h3>
-                    <p class="text-gray-600">Connect Genius Artificial Intelligence with tools like Slack, Notion, or Google Workspace. Import data, export results, and automate workflows for maximum efficiency.</p>
+                    <p class="text-gray-600">Connect Nexify AI with tools like Slack, Notion, or Google Workspace. Import data, export results, and automate workflows for maximum efficiency.</p>
                 </div>
                 <div class="p-6 bg-gray-50 rounded-lg shadow-sm text-center feature-card">
                     <div class="text-indigo-600 mb-4">
@@ -153,7 +155,7 @@
                         <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0-1.104-.896-2-2-2s-2 .896-2 2c0 .738.402 1.378 1 1.723V15a1 1 0 001 1h4a1 1 0 001-1v-2.277c.598-.345 1-.985 1-1.723 0-1.104-.896-2-2-2s-2 .896-2 2m-2 0h4m-4 0c0-1.104.896-2 2-2s2 .896 2 2m-2 0v4"></path></svg>
                     </div>
                     <h3 class="text-xl font-semibold mb-2">AI Personalization</h3>
-                    <p class="text-gray-600">Customize preferences, such as language style or topic focus, for a truly tailored experience. Genius Artificial Intelligence adapts outputs to align with your vision and goals.</p>
+                    <p class="text-gray-600">Customize preferences, such as language style or topic focus, for a truly tailored experience. Nexify AI adapts outputs to align with your vision and goals.</p>
                 </div>
             </div>
         </div>
@@ -197,17 +199,55 @@
         </div>
     </section>
 
+    <!-- Learning Management Section -->
+    <section id="learning" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">Learning Management</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Learning Schedule Visualizer -->
+                <div class="p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <h3 class="text-xl font-semibold mb-4">Learning Schedule Visualizer</h3>
+                    <p class="text-gray-600 mb-4">Plan your study schedule and visualize your weekly learning hours.</p>
+                    <div class="space-y-4">
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700">Subject</label>
+                            <input type="text" id="subject" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Enter subject (e.g., Math)">
+                        </div>
+                        <div>
+                            <label for="hours" class="block text-sm font-medium text-gray-700">Hours per Week</label>
+                            <input type="number" id="hours" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Enter hours">
+                        </div>
+                        <button id="addSubject" class="w-full bg-indigo-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-indigo-700 transition">Add to Schedule</button>
+                        <canvas id="learningChart" class="mt-4"></canvas>
+                    </div>
+                </div>
+                <!-- Learning Chatbot -->
+                <div class="p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <h3 class="text-xl font-semibold mb-4">Learning Assistant Chatbot</h3>
+                    <p class="text-gray-600 mb-4">Ask our AI-powered chatbot for study tips or learning strategies.</p>
+                    <div class="chatbot-container" id="learningChatbotMessages">
+                        <div class="chatbot-message bot">Hello! How can I help you optimize your learning today?</div>
+                    </div>
+                    <div class="mt-4 flex">
+                        <input type="text" id="learningChatbotInput" class="flex-1 border-gray-300 rounded-l-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Type your question...">
+                        <button id="sendLearningMessage" class="bg-indigo-600 text-white font-semibold py-2 px-4 rounded-r-md hover:bg-indigo-700 transition">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section id="about" class="py-20 bg-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-12">About Genius Artificial Intelligence</h2>
+            <h2 class="text-3xl font-bold text-center mb-12">About Nexify AI</h2>
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-8 md:mb-0">
-                    <img src="https://via.placeholder.com/500?text=π∫f(x)dx" alt="Genius Artificial Intelligence" class="rounded-lg shadow-md">
+                    <img src="https://via.placeholder.com/500?text=π∫f(x)dx" alt="Nexify AI" class="rounded-lg shadow-md">
                 </div>
                 <div class="md:w-1/2 md:pl-8">
-                    <p class="text-lg text-gray-600 mb-4">Genius Artificial Intelligence is an AI-powered assistant designed to enhance your thinking and creativity. Leveraging state-of-the-art technology, we provide solutions, inspiration, and insights for a wide range of needs.</p>
-                    <p class="text-lg text-gray-600">We believe everyone has the potential to generate extraordinary ideas, and Genius Artificial Intelligence is here to make that a reality.</p>
+                    <p class="text-lg text-gray-600 mb-4">Nexify AI is an AI-powered assistant designed to enhance your thinking and creativity. Leveraging state-of-the-art technology, we provide solutions, inspiration, and insights for a wide range of needs.</p>
+                    <p class="text-lg text-gray-600">We believe everyone has the potential to generate extraordinary ideas, and Nexify AI is here to make that a reality.</p>
                 </div>
             </div>
         </div>
@@ -242,10 +282,10 @@
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-sm">© 2025 Genius Artificial Intelligence. All rights reserved.</p>
+            <p class="text-sm">© 2025 Nexify AI. All rights reserved.</p>
             <div class="mt-4 flex justify-center space-x-4">
-                <a href="https://github.com" class="https://github.com/Eternixal">GitHub</a>
-                <a href="https://twitter.com" class="https://x.com/RistianPrtama">Twitter</a>
+                <a href="https://github.com" class="text-gray-400 hover:text-white">GitHub</a>
+                <a href="https://twitter.com" class="text-gray-400 hover:text-white">Twitter</a>
                 <a href="https://linkedin.com" class="text-gray-400 hover:text-white">LinkedIn</a>
             </div>
         </div>
@@ -280,32 +320,32 @@
             }
         });
 
-        // Chatbot functionality
+        // Financial chatbot
         const chatbotMessages = document.getElementById('chatbotMessages');
         const chatbotInput = document.getElementById('chatbotInput');
         const sendMessage = document.getElementById('sendMessage');
 
-        const responses = {
+        const financialResponses = {
             'budget': 'To create a budget, track your income and expenses. Allocate 50% to needs, 30% to wants, and 20% to savings or debt repayment. Would you like a detailed breakdown?',
             'investment': 'Consider diversifying investments across stocks, bonds, and real estate. Start with low-cost index funds for beginners. Want tips for risk management?',
             'savings': 'Aim to save 3-6 months of expenses for an emergency fund. High-yield savings accounts offer better returns. Need help setting savings goals?',
             'default': 'I’m here to help with financial questions! Try asking about budgeting, investments, or savings.'
         };
 
-        function addMessage(text, sender) {
+        function addMessage(text, sender, container) {
             const message = document.createElement('div');
             message.classList.add('chatbot-message', sender);
             message.textContent = text;
-            chatbotMessages.appendChild(message);
-            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+            container.appendChild(message);
+            container.scrollTop = container.scrollHeight;
         }
 
         sendMessage.addEventListener('click', () => {
             const userMessage = chatbotInput.value.trim();
             if (userMessage) {
-                addMessage(userMessage, 'user');
-                const response = responses[userMessage.toLowerCase()] || responses['default'];
-                setTimeout(() => addMessage(response, 'bot'), 500);
+                addMessage(userMessage, 'user', chatbotMessages);
+                const response = financialResponses[userMessage.toLowerCase()] || financialResponses['default'];
+                setTimeout(() => addMessage(response, 'bot', chatbotMessages), 500);
                 chatbotInput.value = '';
             }
         });
@@ -313,6 +353,81 @@
         chatbotInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter' && chatbotInput.value.trim()) {
                 sendMessage.click();
+            }
+        });
+
+        // Learning schedule visualizer
+        const learningChartCanvas = document.getElementById('learningChart');
+        const learningChart = new Chart(learningChartCanvas, {
+            type: 'bar',
+            data: {
+                labels: [],
+                datasets: [{
+                    label: 'Hours per Week',
+                    data: [],
+                    backgroundColor: 'rgba(79, 70, 229, 0.6)',
+                    borderColor: 'rgba(79, 70, 229, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Hours'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Subjects'
+                        }
+                    }
+                }
+            }
+        });
+
+        document.getElementById('addSubject').addEventListener('click', () => {
+            const subject = document.getElementById('subject').value.trim();
+            const hours = parseFloat(document.getElementById('hours').value) || 0;
+            if (subject && hours > 0) {
+                learningChart.data.labels.push(subject);
+                learningChart.data.datasets[0].data.push(hours);
+                learningChart.update();
+                document.getElementById('subject').value = '';
+                document.getElementById('hours').value = '';
+            } else {
+                alert('Please enter a valid subject and hours.');
+            }
+        });
+
+        // Learning chatbot
+        const learningChatbotMessages = document.getElementById('learningChatbotMessages');
+        const learningChatbotInput = document.getElementById('learningChatbotInput');
+        const sendLearningMessage = document.getElementById('sendLearningMessage');
+
+        const learningResponses = {
+            'study tips': 'Break your study sessions into 25-minute focused intervals (Pomodoro technique) with 5-minute breaks. Summarize key points after each session. Need more techniques?',
+            'schedule': 'Plan your week by allocating specific times for each subject. Prioritize difficult topics early in the day. Want help creating a schedule?',
+            'motivation': 'Set small, achievable goals and reward yourself upon completion. Visualize your success to stay driven. Need specific goal-setting tips?',
+            'default': 'I’m here to optimize your learning! Try asking about study tips, schedules, or motivation.'
+        };
+
+        sendLearningMessage.addEventListener('click', () => {
+            const userMessage = learningChatbotInput.value.trim();
+            if (userMessage) {
+                addMessage(userMessage, 'user', learningChatbotMessages);
+                const response = learningResponses[userMessage.toLowerCase()] || learningResponses['default'];
+                setTimeout(() => addMessage(response, 'bot', learningChatbotMessages), 500);
+                learningChatbotInput.value = '';
+            }
+        });
+
+        learningChatbotInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && learningChatbotInput.value.trim()) {
+                sendLearningMessage.click();
             }
         });
     </script>
